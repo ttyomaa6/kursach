@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesmain.css">
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+            if (!name) {
+                alert('Пожалуйста, введите ваше имя.');
+                return false;
+            }
+            
+            if (!email) {
+                alert('Пожалуйста, введите вашу электронную почту.');
+                return false;
+            }
+            
+            if (!emailPattern.test(email)) {
+                alert('Пожалуйста, введите корректный адрес электронной почты.');
+                return false;
+            }
+            
+            return true;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+        const burgerMenu = document.getElementById('burger-menu');
+        const navigation = document.querySelector('.navigation');
+
+        burgerMenu.addEventListener('click', function() {
+        navigation.classList.toggle('active');
+        });
+        });
+    </script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="mainlogo.svg" alt="Логотип" width="90" height="90">
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li><a href="vacancies.html">Вакансии</a></li>
+            <li><a href="monetization.html">Монетизация</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+        </ul>
+    </nav>
+    <div class="get-app">
+        <a href="#" class="get-app-button">Get the app</a>
+    </div>
+    <div class="burger-menu" id="burger-menu">
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="10"></rect>
+            <rect y="30" width="100" height="10"></rect>
+            <rect y="60" width="100" height="10"></rect>
+        </svg>
+    </div>
+</header>
+<main>
+    <div class="content">
+        <h1>МИР!<br>ДРУЖБА!<br>YOLO!</h1>
+        <p>Ивенты, мероприятия и<br>вечеринки</p>
+    </div>
+    <div class="images">
+        <div class="row">
+            <img src="fest.png" alt="Image 1" class="image">
+            <img src="picnic.png" alt="Image 2" class="image">
+        </div>
+        <div class="row">
+            <img src="party.png" alt="Image 3" class="image">
+            <img src="friends.png" alt="Image 4" class="image">
+        </div>
+    </div>
+</main>
+<div class="functions">
+    <h1>Что есть в YOLO?</h1>
+    <div class="parts">
+        <div class="part">
+            <img src="map.png" alt="Image 1" class="image">
+            <h2>Карта с друзьями</h2>
+        </div>
+        <div class="part">
+            <img src="event.png" alt="Image 1" class="image">
+            <h2>Лента мероприятий<br>города</h2>
+        </div>
+        <div class="part">
+            <img src="images.png" alt="Image 1" class="image">
+            <h2>Воспоминания с ивентов</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="registration-form">
+        <h2>Зарегестрируйся первым на Бета-Тестирование!</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

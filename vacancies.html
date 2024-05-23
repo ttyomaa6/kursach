@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesvacancies.css">
+
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="mainlogo.svg" alt="Логотип" width="90" height="90">
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="monetization.html">Монетизация</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+        </ul>
+    </nav>
+    <div class="get-app">
+        <a href="#" class="get-app-button">Get the app</a>
+    </div>
+    <div class="burger-menu" id="burger-menu">
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="10"></rect>
+            <rect y="30" width="100" height="10"></rect>
+            <rect y="60" width="100" height="10"></rect>
+        </svg>
+    </div>
+</header>
+
+<main>
+    <div class="vacancy">
+        <div class="headerrec">
+            <h2>Full-stack<br>разработчик</h2>
+            <h3 class="money">2500$</h3>
+        </div>
+        <p>Flutter<br><br>Полная занятость<br><br>Опыт от двух лет</p>
+        <button onclick="showForm()">Откликнуться</button>
+    </div>
+        <div class="vacancy">
+        <div class="headerrec">
+            <h2>PR менеджер</h2>
+            <h3 class="money">1500$</h3>
+        </div>
+        <p>Креативность<br><br>Полная занятость<br><br>Опыт от двух лет</p>
+        <button onclick="showForm()">Откликнуться</button>
+    </div>
+    <div class="vacancy">
+        <div class="headerrec">
+            <h2>Управлющий<br>командой</h2>
+            <h3 class="money">3000$</h3>
+        </div>
+        <p>Лидерские качества<br><br>Полная занятость<br><br>Опыт от пяти лет</p>
+        <button onclick="showForm()">Откликнуться</button>
+    </div>
+    <div id="modal">
+        <div id="modal-content" class="hidden">
+          <h2>Введите данные</h2>
+          <form id="myForm">
+            <label for="name">Имя:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">О себе(возраст, опыт, образование):</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        function showForm() {
+          var modal = document.getElementById("modal");
+          var modalContent = document.getElementById("modal-content");
+          modal.style.display = "flex";
+          modalContent.classList.remove("hidden");
+        }
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const name = form.querySelector('input[name="name"]').value.trim();
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const message = form.querySelector('textarea[name="message"]')?.value.trim();
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+            if (!name) {
+                alert('Пожалуйста, введите ваше имя.');
+                return false;
+            }
+            
+            if (!email) {
+                alert('Пожалуйста, введите вашу электронную почту.');
+                return false;
+            }
+            
+            if (!emailPattern.test(email)) {
+                alert('Пожалуйста, введите корректный адрес электронной почты.');
+                return false;
+            }
+            
+            if (message !== undefined && !message) {
+                alert('Пожалуйста, введите сообщение.');
+                return false;
+            }
+            
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('myForm').onsubmit = function() {
+                return validateForm('myForm');
+            };
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const burgerMenu = document.getElementById('burger-menu');
+        const navigation = document.querySelector('.navigation');
+
+        burgerMenu.addEventListener('click', function() {
+        navigation.classList.toggle('active');
+        });
+        });
+        
+        </script>
+</main>
+<footer id="footer">
+    <iframe id="footer-iframe" src="footer.xml" style="width: 115%; height: 100%; border: none; overflow: hidden;"></iframe>
+</footer>
+
+</body>
+</html>

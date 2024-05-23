@@ -1,0 +1,443 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('fonts/Montserrat-SemiBold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url('fonts/Montserrat-Light.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url('fonts/Montserrat-Black.ttf') format('truetype'),
+}
+
+
+body {
+    background-color: #0B0B0B;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 80px;
+    font-family: 'Montserrat';
+    background-color: #0B0B0B;
+    color: #ffffff;
+}
+.logo img {
+    margin-right: auto;
+    width: 70px;
+    height: 70px;
+}
+.navigation {
+    margin-left: auto;
+    margin-right: 76px;
+    font-family: 'Montserrat-Medium';
+}
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navigation li {
+    margin-right: 76px;
+}
+.navigation li:last-child {
+    margin-right: 0;
+}
+.navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+.navigation a:hover {
+    color: #8CE85F;
+}
+.get-app-button {
+    display: inline-block;
+    padding: 16px 30px;
+    background-color: #8CE85F;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-right: auto;
+    transition: background-color 0.3s, color 0.3s; 
+}
+.get-app-button:hover {
+    background-color: #ffffff;
+    color: #000000; 
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 150px 0;
+    background-color: #0B0B0B;
+    color: #ffffff;
+}
+main h1 {
+    font-size: 86px;
+    margin: 0;
+    font-family: 'Montserrat-Black';
+    background: linear-gradient(135deg, #4CAF50, #F1E91A, #E441CA);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: block;
+}
+main p {
+    font-size: 24px;
+    margin-top: 42px;
+    font-family: 'Montserrat';
+    display: inline-block;
+}
+
+
+.content {
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.images {
+    display: flex;
+    flex-direction: column; 
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px; 
+}
+
+.image {
+    width: 100%; /* Изменено для динамического размера */
+    max-width: 320px; /* Максимальная ширина */
+    height: auto;
+    margin-right: 20px;
+    align-self: flex-start;
+}
+
+.row .image:last-child {
+    margin-left: auto;
+}
+
+.row:nth-child(2) .image:last-child {
+    margin-top: -220px;
+}
+
+/* Медиазапросы для изменения размера картинок при разных разрешениях экрана */
+@media (max-width: 1200px) {
+    .image {
+        width: 80%;
+        max-width: none; /* Убираем ограничение максимальной ширины */
+    }
+}
+
+@media (max-width: 992px) {
+    .image {
+        width: 70%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .image {
+        width: 60%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .image {
+        width: 50%;
+        max-width: none;
+    }
+}
+
+.functions {
+    align-items: center;
+    text-align: center;
+    align-content: center; 
+    margin-top: 40px;
+}
+h1 {
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Montserrat-Black';
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    color: #ffffff;
+    margin-top: 20px;
+    
+}
+p {
+    font-size: 22px;
+    margin-top: 42px;
+    font-family: 'Montserrat';
+    display: block;
+    
+}
+.parts{
+    background-color: #141414;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+.part {
+    flex-grow: 1;
+    width: auto;
+    text-align: center;
+    background-color: #141414;
+    border-radius: 20px;
+    align-content: center;
+    padding-top: 30px;
+}
+
+.part h2 {
+    margin-top: 0;
+    font-size: 22px;
+    font-family: 'Montserrat';
+    text-align: center;
+    color: #ffffff;
+    display: inline-flex;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .parts {
+        display: block; 
+        margin-left: 20px; /* Уменьшаем отступ слева */
+        margin-right: 20px; /* Уменьшаем отступ справа */
+        margin-top: 20px; /* Уменьшаем отступ сверху */
+        margin-bottom: 50px; /* Уменьшаем отступ снизу */
+    }
+
+    .part {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.registration-form {
+    background-color: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    color: white;
+    
+}
+.registration-form h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Montserrat';
+}
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Montserrat';
+}
+.registration-form input[type="text"],
+.registration-form input[type="email"] {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    margin-top: 10px;
+    font-family: 'Montserrat';
+}
+.registration-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #8CE85F;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    border-radius: 8px;
+}
+.registration-form input[type="submit"]:hover {
+    background-color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+    .registration-form {
+        width: calc(100% - 40px); /* Уменьшаем ширину формы */
+        margin: 20px; /* Добавляем отступы */
+    }
+
+    .registration-form h2 {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"] {
+        width: calc(100% - 20px); /* Уменьшаем ширину инпутов и учитываем отступы */
+        margin-bottom: 10px; /* Уменьшаем отступ между инпутами */
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .navigation {
+        margin-right: 0;
+    }
+    .get-app-button {
+        margin-top: 20px;
+    }
+    .navigation ul {
+        flex-direction: column;
+    }
+    .navigation li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+    main h1 {
+        font-size: 48px;
+    }
+    main p {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+}
+.burger-menu {
+    display: none;
+    flex-direction: row;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0; 
+    align-items: center; 
+}
+
+.burger-menu svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Медиа-запрос для адаптации под маленькие экраны */
+@media (max-width: 768px) {
+    .header {
+        padding: 22px 20px;
+        justify-content: space-between;
+        flex-direction: row;
+         /* Оставляем логотип слева */
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .get-app-button {
+        display: none;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation li {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .navigation a {
+        font-size: 18px;
+        padding: 10px;
+        border-bottom: 1px solid #ffffff;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 22px 10px;
+        flex-direction: row;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .get-app-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .vacancy h2 {
+        font-size: 18px;
+    }
+
+    .vacancy p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .images {
+        display: none;
+    }
+}

@@ -1,0 +1,290 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('fonts/Montserrat-SemiBold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url('fonts/Montserrat-Light.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url('fonts/Montserrat-Black.ttf') format('truetype'),
+}
+
+
+body {
+    background-color: #0B0B0B;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 80px;
+    font-family: 'Montserrat';
+    background-color: #0B0B0B;
+    color: #ffffff;
+}
+.logo img {
+    margin-right: auto;
+    width: 70px;
+    height: 70px;
+}
+.navigation {
+    margin-left: auto;
+    margin-right: 76px;
+    font-family: 'Montserrat-Medium';
+}
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navigation li {
+    margin-right: 76px;
+}
+.navigation li:last-child {
+    margin-right: 0;
+}
+.navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+.navigation a:hover {
+    color: #976DD3;
+}
+.get-app-button {
+    display: inline-block;
+    padding: 16px 30px;
+    background-color: #4D97DC;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-right: auto;
+    transition: background-color 0.3s, color 0.3s; 
+}
+.get-app-button:hover {
+    background-color: #ffffff;
+    color: #000000; 
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0B0B0B;
+    color: #ffffff;
+    display: block;
+}
+.content {
+    align-items: center;
+    text-align: center;
+    align-content: center; 
+    margin-top: 40px;
+}
+main h1 {
+    font-size: 50px;
+    margin: 0;
+    font-family: 'Montserrat-Black';
+    background: linear-gradient(135deg, #E441CA, #4D97DC);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    
+    
+}
+main p {
+    font-size: 22px;
+    margin-top: 42px;
+    font-family: 'Montserrat';
+    display: block;
+    
+}
+.parts{
+    background-color: #141414;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+.part {
+    flex-grow: 1;
+    width: auto;
+    text-align: center;
+    background-color: #141414;
+    border-radius: 20px;
+    align-content: center;
+}
+
+.part h2 {
+    margin-top: 0;
+    font-size: 22px;
+    font-family: 'Montserrat';
+    text-align: center;
+    color: #ffffff;
+    display: inline-flex;
+    padding: 20px;
+}
+.burger-menu {
+    display: none;
+    flex-direction: row;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0; 
+    align-items: center; 
+}
+
+.burger-menu svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+@media (max-width: 768px) {
+    .parts {
+        flex-direction: column; /* Изменяем направление на вертикальное */
+        align-items: center; /* Выравниваем по центру */
+        margin-left: 20px; /* Уменьшаем отступ слева */
+        margin-right: 20px; /* Уменьшаем отступ справа */
+    }
+
+    .part {
+        margin-bottom: 20px; /* Уменьшаем отступ между блоками */
+        width: calc(100% - 40px); /* Уменьшаем ширину блоков для сохранения отступов */
+    }
+
+    .part:not(:last-child) {
+        margin-bottom: 20px; /* Отступ между блоками, кроме последнего */
+    }
+
+    .part h2 {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
+    main p {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 22px 20px;
+        justify-content: space-between;
+        flex-direction: row;
+         /* Оставляем логотип слева */
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .get-app-button {
+        display: none;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation li {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .navigation a {
+        font-size: 18px;
+        padding: 10px;
+        border-bottom: 1px solid #ffffff;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 22px 10px;
+        flex-direction: row;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .get-app-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .vacancy h2 {
+        font-size: 18px;
+    }
+
+    .vacancy p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+#footer-iframe{
+    width: 50vw;
+    font-size: 3vw;
+    overflow: hidden;
+}
+#footer{
+    overflow: hidden;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.footer-links li {
+    margin: 0 10px; 
+}
+@media(max-width:700px){
+    footer p{font-size: 2.5vw;}
+    .footer-links li{
+        font-size: 2vw;
+    }
+}
+@media(max-width:1200px){
+    footer{
+        height: 10vw;
+
+    }
+}
